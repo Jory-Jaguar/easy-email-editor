@@ -41944,7 +41944,7 @@ function AttributePanel() {
   const { focusIdx: focusIdx2 } = useFocusIdx();
   const Com = focusBlock2 && BlockAttributeConfigurationManager.get(focusBlock2.type);
   const shadowRoot = getShadowRoot();
-  if (!initialized)
+  if (!initialized || !shadowRoot)
     return null;
   return /* @__PURE__ */ React__default.createElement(SelectionRangeProvider, null, /* @__PURE__ */ React__default.createElement(PresetColorsProvider, null, Com ? /* @__PURE__ */ React__default.createElement(Com, {
     key: focusIdx2

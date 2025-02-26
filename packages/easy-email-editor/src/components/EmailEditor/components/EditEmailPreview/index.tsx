@@ -24,7 +24,7 @@ export function EditEmailPreview() {
 
   useEffect(() => {
     if (containerRef) {
-      setInitialized(true);
+      //setInitialized(true);
     }
   }, [containerRef, setInitialized]);
 

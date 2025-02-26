@@ -13,7 +13,7 @@ import { BlockAttributeConfigurationManager } from './utils/BlockAttributeConfig
 import { SelectionRangeProvider } from './components/provider/SelectionRangeProvider';
 import { TableOperation } from './components/blocks/AdvancedTable/Operation';
 
-export interface AttributePanelProps {}
+export interface AttributePanelProps { }
 
 export function AttributePanel() {
   const { values, focusBlock } = useBlock();
@@ -25,7 +25,7 @@ export function AttributePanel() {
 
   const shadowRoot = getShadowRoot();
 
-  if (!initialized) return null;
+  if (!initialized || !shadowRoot) return null;
 
   return (
     <SelectionRangeProvider>
