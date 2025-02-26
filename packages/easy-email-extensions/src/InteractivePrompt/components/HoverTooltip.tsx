@@ -10,7 +10,7 @@ export function HoverTooltip() {
   const lazyHoverIdx = useLazyState(hoverIdx, 60);
   const { focusIdx } = useFocusIdx();
   const [isTop, setIsTop] = useState(false);
-  const { initialized } = useEditorContext();
+  const initialized = false;
 
   const [blockNode, setBlockNode] = useState<HTMLDivElement | null>(null);
   const rootRef = useRef<DOMRect | null>(null);
@@ -99,7 +99,7 @@ function TipNode(props: TipNodeProps) {
       return `${t('Insert after')} ${title}`;
     } else if (direction === 'right' || direction === 'left') {
       return t('Drag here');
-    }    
+    }
     return `${t('Drag to')} ${title}`;
   }, [direction, title]);
 

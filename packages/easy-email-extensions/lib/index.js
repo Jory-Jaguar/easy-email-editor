@@ -52,7 +52,7 @@ var __async = (__this, __arguments, generator) => {
 };
 import * as React from "react";
 import React__default, { createContext, useContext, isValidElement, Children, cloneElement, Component, useRef, useMemo, memo, forwardRef, createRef, useState, useImperativeHandle, useEffect, useLayoutEffect, useCallback, PureComponent, useReducer, Fragment, Suspense } from "react";
-import { IconFont, useEditorProps, Stack as Stack$4, useRefState, getShadowRoot, DATA_CONTENT_EDITABLE_TYPE, ContentEditableType, TextStyle, useEditorContext, useBlock, useFocusIdx, DATA_CONTENT_EDITABLE_IDX, useFocusBlockLayout, MergeTagBadge, FIXED_CONTAINER_ID, getPluginElement, RICH_TEXT_BAR_ID, CONTENT_EDITABLE_CLASS_NAME, getEditorRoot, scrollBlockEleIntoView, useHoverIdx, useDataTransfer, getBlockNodeByChildEle, getDirectionPosition, DATA_ATTRIBUTE_DROP_CONTAINER, BlockAvatarWrapper, isTextBlock, getBlockNodeByIdx, useLazyState, useActiveTab, ActiveTabKeys } from "easy-email-editor";
+import { IconFont, useEditorProps, Stack as Stack$4, useRefState, getShadowRoot, DATA_CONTENT_EDITABLE_TYPE, ContentEditableType, TextStyle, useEditorContext, useBlock, useFocusIdx, DATA_CONTENT_EDITABLE_IDX, useFocusBlockLayout, MergeTagBadge, FIXED_CONTAINER_ID, getPluginElement, RICH_TEXT_BAR_ID, CONTENT_EDITABLE_CLASS_NAME, getEditorRoot, scrollBlockEleIntoView, useHoverIdx, useDataTransfer, getBlockNodeByChildEle, getDirectionPosition, DATA_ATTRIBUTE_DROP_CONTAINER, BlockAvatarWrapper, isTextBlock, useLazyState, useActiveTab, ActiveTabKeys } from "easy-email-editor";
 import { BasicType, ImageManager, EMAIL_BLOCK_CLASS_NAME, BlockManager, createBlockDataByType, AdvancedType, Operator, OperatorSymbol, isAdvancedBlock, getParentByIdx, getParentIdx, getIndexByIdx, getSiblingIdx, getNodeIdxFromClassName, getNodeIdxClassName, getPageIdx, getChildIdx, JsonToMjml, getNodeTypeFromClassName } from "easy-email-core";
 import ReactDOM, { createPortal, render as render$1 } from "react-dom";
 import { Field, useForm as useForm$1, useField, Form as Form$3, version as version$2, useFormState as useFormState$2 } from "react-final-form";
@@ -46197,63 +46197,19 @@ function FocusTooltip() {
     focusBlockNode
   ));
 }
-function awaitForElement(idx) {
-  let promiseObj = {
-    cancel: () => {
-    },
-    promise: Promise.resolve()
-  };
-  promiseObj.promise = new Promise((resolve) => {
-    const ele = getBlockNodeByIdx(idx);
-    if (ele) {
-      resolve(ele);
-      return;
-    }
-    const timer = setInterval(() => {
-      const ele2 = getBlockNodeByIdx(idx);
-      if (ele2) {
-        resolve(ele2);
-        clearInterval(timer);
-      }
-    }, 50);
-    promiseObj.cancel = () => {
-      clearInterval(timer);
-    };
-  });
-  return promiseObj;
-}
 function HoverTooltip() {
   const { hoverIdx, direction, isDragging } = useHoverIdx();
   const lazyHoverIdx = useLazyState(hoverIdx, 60);
   const { focusIdx: focusIdx2 } = useFocusIdx();
   const [isTop, setIsTop] = useState(false);
-  const { initialized } = useEditorContext();
+  const initialized = false;
   const [blockNode, setBlockNode] = useState(null);
   const rootRef = useRef(null);
   useEffect(() => {
-    if (initialized) {
-      rootRef.current = getEditorRoot().getBoundingClientRect();
-    }
   }, [initialized]);
   useEffect(() => {
-    const rootBounds = rootRef.current;
-    if (!initialized)
-      return;
-    if (lazyHoverIdx) {
-      const promiseObj = awaitForElement(lazyHoverIdx);
-      promiseObj.promise.then((blockNode2) => {
-        if (rootBounds) {
-          const { top } = blockNode2.getBoundingClientRect();
-          setIsTop(rootBounds.top === top);
-        }
-        setBlockNode(blockNode2);
-      });
-      return () => {
-        promiseObj.cancel();
-      };
-    } else {
-      setBlockNode(null);
-    }
+    rootRef.current;
+    return;
   }, [lazyHoverIdx, initialized]);
   const block2 = useMemo(() => {
     return blockNode ? BlockManager.getBlockByType(getNodeTypeFromClassName(blockNode.classList)) : null;
