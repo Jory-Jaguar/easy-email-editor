@@ -4,11 +4,6 @@ import { BasicType, IText } from 'easy-email-core';
 import { Stack, TextStyle, useBlock, useEditorContext, useFocusIdx } from 'easy-email-editor';
 import { ShadowDom } from '@extensions/components/ShadowDom';
 
-const CodeMirrorEditorPromise = import(
-  '../../../components/Form/CodemirrorEditor'
-);
-const CodeMirrorEditor = React.lazy(() => CodeMirrorEditorPromise);
-
 export const HtmlEditor: React.FC<{
   visible: boolean;
   setVisible: (v: boolean) => void;
@@ -96,7 +91,7 @@ export const HtmlEditor: React.FC<{
               </div>
             )}
           >
-            <CodeMirrorEditor value={content} onChange={setContent} />
+
           </Suspense>
         </div>
         <div

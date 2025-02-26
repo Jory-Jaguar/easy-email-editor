@@ -18,11 +18,11 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3
       easy-email-core:
-        specifier: ^4.3.6
-        version: 4.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.16.6
+        version: 4.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       easy-email-editor:
         specifier: ^4.3.6
-        version: 4.16.1(easy-email-core@4.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mjml-browser@4.15.3)(react-dom@18.3.1(react@18.3.1))(react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1))(react@18.3.1)
+        version: 4.16.1(easy-email-core@4.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mjml-browser@4.15.3)(react-dom@18.3.1(react@18.3.1))(react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1))(react@18.3.1)
       final-form:
         specifier: ^4.20.4
         version: 4.20.10
@@ -2505,8 +2505,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  easy-email-core@4.16.1:
-    resolution: {integrity: sha512-hxZtUU6bPqKamzPSfHeJfb3I4GiEJiBmp9ij8EdqACrBWAYVCbdTupS2BlUY/tcYuvjNzn/GEo9M1HImEfa+2w==}
+  easy-email-core@4.17.0:
+    resolution: {integrity: sha512-KZf+gs+UH95gJJwa80RN8nXsCTOCMyZnHrl+05BQR8HTkpTpbpSMAs/I7ubtkQjuxQb5MUqWs3GFSUZpfJ/pfw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -8863,7 +8863,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  easy-email-core@4.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  easy-email-core@4.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       he: 1.2.0
       js-beautify: 1.15.3
@@ -8872,9 +8872,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       uuid: 8.3.2
 
-  easy-email-editor@4.16.1(easy-email-core@4.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mjml-browser@4.15.3)(react-dom@18.3.1(react@18.3.1))(react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1))(react@18.3.1):
+  easy-email-editor@4.16.1(easy-email-core@4.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mjml-browser@4.15.3)(react-dom@18.3.1(react@18.3.1))(react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1))(react@18.3.1):
     dependencies:
-      easy-email-core: 4.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      easy-email-core: 4.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       final-form: 4.20.10
       final-form-arrays: 3.1.0(final-form@4.20.10)
       final-form-set-field-touched: 1.0.1(final-form@4.20.10)

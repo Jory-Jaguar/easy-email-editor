@@ -5,11 +5,11 @@ import visualizer from 'rollup-plugin-visualizer';
 export default defineConfig({
   plugins: [
     process.env.ANALYZE === 'true' &&
-      visualizer({
-        open: true,
-        gzipSize: true,
-        brotliSize: true,
-      }),
+    visualizer({
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
   ].filter(Boolean) as any,
   resolve: {
     alias: {

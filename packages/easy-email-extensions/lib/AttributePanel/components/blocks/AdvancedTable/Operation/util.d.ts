@@ -1,4 +1,5 @@
 import { IBoundaryRect, IBoundingPosition, IOperationData } from './type';
+import { AdvancedTableBlock } from 'easy-email-core';
 export declare const getBoundaryRectAndElement: (el1: Element, el2: Element) => {
     leftTopCell: Element;
     bottomRightCell: Element;
@@ -19,12 +20,4 @@ export declare const getTdBoundaryIndex: (leftTopCell: Element, bottomRightCell:
     bottom: number;
 };
 export declare const getCorrectTableIndexBoundary: (tableIndexBoundary: IBoundingPosition, tableData: IOperationData[][]) => IBoundingPosition;
-export declare const getMaxTdCount: (tableData: IBlockData<{
-    cellPadding?: string | undefined;
-    cellBorderColor?: string | undefined;
-    'font-style'?: string | undefined;
-    'text-align'?: string | undefined;
-}, {
-    content?: string | undefined;
-    tableSource: import("easy-email-core").IAdvancedTableData[][];
-}>) => number;
+export declare const getMaxTdCount: (tableData: AdvancedTableBlock['data']['value']['tableSource']) => number;

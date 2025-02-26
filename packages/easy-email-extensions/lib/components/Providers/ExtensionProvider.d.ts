@@ -1,4 +1,4 @@
-import { BlockLayerProps } from '@extensions/BlockLayer';
+import { BlockLayerProps } from '../../BlockLayer';
 import React from 'react';
 export interface ExtensionProps extends BlockLayerProps {
     children?: React.ReactNode | React.ReactElement;
